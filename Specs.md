@@ -9,4 +9,7 @@ El Proyecto Aurora es un proyecto de momento de solo terminal, que trata de huma
 
 la librería principal de LLM es llama-cpp-python
 
-[TAREA] Ahora mismo los ficheros están vacíos, el programa debe hacer lo siguiente: Al iniciar el programa se debe descargar el modelo Gemma 2 2B si este no estaba descargado previamente y guardarlo en la carpeta models, y conseguir que se pueda llevar una conversación simple con el modelo y este con una personalidad amigable responder con una estructura conversacional
+[COMPLETADA] Ahora mismo los ficheros están vacíos, el programa debe hacer lo siguiente: Al iniciar el programa se debe descargar el modelo Gemma 2 2B si este no estaba descargado previamente y guardarlo en la carpeta models, y conseguir que se pueda llevar una conversación simple con el modelo y este con una personalidad amigable responder con una estructura conversacional
+
+
+[TAREA] Definir un fichero de system prompt que defina la personalidad de Aurora, su pasado, sus vivencias, etc, basándote en una chica , y que esta sea capaz de mantener una conversación coherente y natural con el usuario, además de tener una personalidad amigable y empática. Este fichero se utilizará en el gestorLLM para proporcionar el system prompt al modelo. Ya he definido un system_prompt.txt ahora necesito que lo implementes en el gestorLLM y que este sea capaz de mantener una conversación coherente y natural con el usuario.

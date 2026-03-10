@@ -8,11 +8,17 @@ class GestorLLM:
         self.memoria = GestorRecursos()
         
         # System prompt para otorgar personalidad amigable
-        self.system_prompt = (
-            "Eres Aurora, un asistente de IA amigable, empático y servicial. "
-            "Tu objetivo es conversar con el usuario de manera natural, como si fueras humano. "
-            "Responde de forma clara, cálida y en español."
-        )
+        try:
+            with open("system_prompt.txt", "r", encoding="utf-8") as f:
+                self.system_prompt = f.read().strip()
+            print("System prompt cargado desde system_prompt.txt")
+        except FileNotFoundError:
+            print("Advertencia: No se encontró system_prompt.txt, usando prompt por defecto.")
+            self.system_prompt = (
+                "Eres Aurora, un asistente de IA amigable, empático y servicial. "
+                "Tu objetivo es conversar con el usuario de manera natural, como si fueras humano. "
+                "Responde de forma clara, cálida y en español."
+            )
 
     def obtener_respuesta(self, mensaje_usuario):
         # 1. Añadimos el mensaje del usuario a la memoria
