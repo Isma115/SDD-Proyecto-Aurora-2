@@ -58,3 +58,18 @@ class MotorLLM:
         )
         
         return response["choices"][0]["message"]["content"]
+
+    def generate_thought(self, prompt, max_tokens=150):
+        # Utilidad para generar pensamientos internos (summarization, extraction, etc.) de un solo turno (zero-shot)
+        messages = [
+            {"role": "user", "content": prompt}
+        ]
+        
+        response = self.llm.create_chat_completion(
+            messages=messages,
+            max_tokens=max_tokens,
+            temperature=0.3, # Baja temperatura para tareas analíticas/extracción
+            top_p=0.9
+        )
+        
+        return response["choices"][0]["message"]["content"]
