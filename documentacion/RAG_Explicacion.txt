@@ -1,0 +1,47 @@
+# Sistema RAG (Retrieval-Augmented Generation) de Aurora
+
+Este documento explica cómo funciona el sistema RAG (Generación Aumentada por Recuperación) que hemos implementado en Aurora, tanto de forma conceptual como técnica.
+
+## Explicación Sencilla (Para todos los públicos)
+
+Imagina a Aurora como una persona muy inteligente pero que no tiene todos los conocimientos del mundo en su cerebro ni recuerda con detalle absolutamente todo lo que le ha pasado. 
+
+Para solucionar esto, Aurora tiene a su disposición una **gran biblioteca** (los archivos en la carpeta `Recursos/conocimiento`) y un **diario de memorias** (donde apunta cosas importantes de las conversaciones en `memoria.json`).
+
+Cuando tú le haces una pregunta o le dices algo, antes de responderte inmediatamente, Aurora **pausa y piensa**: *"¿He hablado de esto antes? ¿Hay algo en mi biblioteca que me pueda ayudar a responder mejor?"*.
+
+1. Si encuentra información útil en su biblioteca o en su diario, la saca y la pone en su "mesa de trabajo" (esto es inyectar el contexto).
+2. Luego, lee todo lo que tiene sobre la mesa (tu pregunta + la información que encontró) y formula su respuesta final.
+
+De esta manera, puede hablar de cosas complejas o acordarse de ti sin necesidad de que el modelo base tenga esa información grabada a fuego.
+
+---
+
+## Explicación Técnica Detallada
+
+El sistema RAG dota al modelo generativo (Gemma 2 2B en este caso) de información externa en tiempo de inferencia, evitando tener que re-entrenar el modelo (*fine-tuning*) para enseñarle conceptos nuevos.
+
+El flujo implementado consta de los siguientes pasos:
+
+1. **Ingesta y Fragmentación (Chunking)**:
+   - Al iniciarse el programa (`GestorRecursos`), el sistema escanea el directorio `Recursos/conocimiento`.
+   - Lee los archivos de texto (conocimiento en bruto) y los divide en fragmentos (chunks) basándose en separaciones por doble salto de línea (`\n\n`). 
+   - Se ignoran los fragmentos demasiado cortos (menos de 30 caracteres) y se guardan en memoria (`self.textos_conocimiento`).
+
+2. **Procesamiento de la Consulta (Query Processing)**:
+   - Cuando el usuario introduce un mensaje, la función `_extraer_palabras_clave` procesa y normaliza el texto.
+   - Todo se pasa a minúsculas, se eliminan los signos de puntuación y se retiran las "Stopwords" (palabras vacías sin mucho significado semántico como "el", "la", "de", "con").
+   - Esto nos deja un conjunto (`set`) de palabras clave puras que representan la intención de búsqueda.
+
+3. **Recuperación y Puntuación (Retrieval & Scoring)**:
+   - La recuperación actualmente es léxica (basada en palabras).
+   - El sistema itera sobre cada fragmento de la base de conocimiento y sus propios recuerdos (`conocimiento_crudo` y `conocimiento_previo`).
+   - Se realiza una intersección entre las palabras clave de la consulta del usuario y las palabras de cada fragmento.
+   - Cada coincidencia otorga +1 punto de relevancia (Scoring).
+   - El sistema ordena los fragmentos de mayor a menor puntuación y rescata los `top-K` fragmentos más relevantes (por defecto, 2 limitando el Knowledge, y 3 para memorias).
+
+4. **Aumento e Inferencia (Augmentation & Generation)**:
+   - Los fragmentos recuperados se formatean como texto natural dentro de un bloque predefinido y se inyectan en el sistema:
+     `INFORMACIÓN DE CONTEXTO RELEVANTE PARA RESPONDER ...`
+   - Se adjunta dinámicamente este nuevo bloque al System Prompt original de la iteración.
+   - Finalmente, el prompt modificado se le proporciona al `Llama-cpp` para generar la respuesta. El LLM utiliza la atención cruzada (cross-attention) para entrelazar el contexto insertado con la respuesta hacia el usuario, basando sus "alucinaciones" en contexto real dictado por el documento.

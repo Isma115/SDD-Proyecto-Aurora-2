@@ -1,0 +1,23 @@
+{
+    "model": {
+        "repo_id": "bartowski/gemma-2-2b-it-GGUF",
+        "filename": "gemma-2-2b-it-Q4_K_M.gguf"
+    },
+    "initialization": {
+        "n_ctx": 4096,
+        "n_threads": null,
+        "n_gpu_layers": -1
+    },
+    "generation": {
+        "temperature": 0.7,
+        "top_p": 0.9,
+        "max_tokens": 512,
+        "repeat_penalty": 1.1
+    },
+    "thought": {
+        "temperature": 0.3,
+        "top_p": 0.9,
+        "max_tokens": 150,
+        "repeat_penalty": 1.15
+    }
+}

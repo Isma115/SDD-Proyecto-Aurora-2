@@ -1,4 +1,6 @@
 import random
+import os
+import datetime
 from motorLLM import MotorLLM
 from recursos import GestorRecursos
 
@@ -38,16 +40,29 @@ class GestorLLM:
 
 
     def obtener_respuesta(self, mensaje_usuario):
-        # 1. Proceso de Recall (Recuperación de memoria)
-        # Decidimos si intentar recordar algo antes de responder
+        # 1. Proceso de Recall (Recuperación de memoria y conocimiento en bruto)
         conocimiento_previo = []
+        conocimiento_crudo = []
+        
+        # Decidimos si intentar recordar algo personal o de conversaciones pasadas
         if random.random() < 0.7: # Alta probabilidad de intentar recordar
-            print("[Aurora buscando en su memoria...] (Recall)")
             conocimiento_previo = self.memoria.buscar_recuerdos(mensaje_usuario)
+            if conocimiento_previo:
+                print("[Aurora recordando conversaciones pasadas...] (Recall Memoria)")
+            
+        # Siempre buscamos en los textos de conocimiento en bruto si la consulta lo requiere
+        conocimiento_crudo = self.memoria.buscar_conocimiento(mensaje_usuario)
+        if conocimiento_crudo:
+            print("[Aurora consultando su base de conocimiento general...] (Recall Conocimiento)")
             
         contexto_adicional = ""
-        if conocimiento_previo:
-            contexto_adicional = "\n\nRecuerdos pasados que pueden ser útiles:\n" + "\n".join(conocimiento_previo)
+        if conocimiento_previo or conocimiento_crudo:
+            contexto_adicional = "\n\nINFORMACIÓN DE CONTEXTO RELEVANTE PARA RESPONDER (Úsala si es pertinente):\n"
+            if conocimiento_previo:
+                contexto_adicional += "- Hechos y recuerdos pasados de conversaciones:\n" + "\n".join(f"  * {c}" for c in conocimiento_previo) + "\n"
+            if conocimiento_crudo:
+                contexto_adicional += "- Información externa de conocimiento general relacionada:\n" + "\n".join(f"  * {c}" for c in conocimiento_crudo) + "\n"
+                contexto_adicional += "\n[DIRECTRIZ DE RESPUESTA]: Estás consultando tu base de conocimiento externo general para responder. Por lo tanto, debes actuar como una **EXPERTA** en el tema y dar una explicación **MUY EXTENSA, RICA EN DETALLES Y BIEN ESTRUCTURADA**, no te limites a una respuesta breve.\n"
         
         # 2. Añadimos el mensaje del usuario a la memoria a corto plazo
         self.memoria.agregar_mensaje_usuario(mensaje_usuario)
@@ -58,6 +73,10 @@ class GestorLLM:
         # 4. Solicitamos respuesta al motor, inyectando los recuerdos en el system prompt
         print("Aurora está escribiendo...")
         prompt_enriquecido = self.system_prompt + contexto_adicional
+        
+        # Guardar log de contexto antes de generar respuesta
+        self._guardar_log_contexto(prompt_enriquecido, historial)
+        
         respuesta = self.motor.generate_response(prompt_enriquecido, historial)
         
         # 5. Guardamos la respuesta del asistente en memoria a corto plazo
@@ -91,3 +110,35 @@ class GestorLLM:
             if "NADA" not in pensamiento_limpio.upper() and len(pensamiento_limpio) > 5:
                 print(f"[Nuevo recuerdo almacenado]: {pensamiento_limpio}")
                 self.memoria.guardar_recuerdo(pensamiento_limpio)
+
+    def _guardar_log_contexto(self, prompt, historial):
+        directorio_logs = "logs"
+        if not os.path.exists(directorio_logs):
+            os.makedirs(directorio_logs, exist_ok=True)
+            
+        timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+        nombre_archivo = f"log_contexto_{timestamp}.txt"
+        ruta_archivo = os.path.join(directorio_logs, nombre_archivo)
+        
+        try:
+            with open(ruta_archivo, "w", encoding="utf-8") as f:
+                f.write("=== SYSTEM PROMPT + CONTEXTO ADICIONAL ===\n\n")
+                f.write(prompt)
+                f.write("\n\n=== HISTORIAL DE CONVERSACIÓN PUESTO EN CONTEXTO ===\n\n")
+                for msg in historial:
+                    f.write(f"Rol: {msg['role']}\n")
+                    f.write(f"Contenido: {msg['content']}\n")
+                    f.write("-" * 40 + "\n")
+                    
+            # Mantener un máximo de 10 archivos de log
+            archivos_log = [os.path.join(directorio_logs, f) for f in os.listdir(directorio_logs) if f.startswith("log_contexto_") and f.endswith(".txt")]
+            archivos_log.sort(key=os.path.getmtime) # Ordenar del más antiguo al más reciente
+            
+            # Borrar los más antiguos si superan los 10
+            while len(archivos_log) > 10:
+                archivo_a_borrar = archivos_log.pop(0)
+                os.remove(archivo_a_borrar)
+                
+        except Exception as e:
+            print(f"Error al guardar log de contexto: {e}")
+

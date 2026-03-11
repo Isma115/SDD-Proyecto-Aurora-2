@@ -20,7 +20,7 @@ Desde un punto de vista de ingeniería, el sistema utiliza un **Bucle Cognitivo 
 ### Fase A: Proceso de Recall (Recuperación)
 Ocurre **antes** de generar la respuesta final.
 *   **Mecanismo**: El `GestorLLM` consulta al `GestorRecursos`.
-*   **Funcionamiento**: Se extraen entradas del archivo `Recursos/memoria.json`. Actualmente se utilizan las entradas más recientes como contexto enriquecido, el cual se inyecta en el *System Prompt* del modelo Gemma 2.
+*   **Funcionamiento**: Se extraen entradas del archivo `Memoria/memoria.json`. Actualmente se utilizan las entradas más recientes como contexto enriquecido, el cual se inyecta en el *System Prompt* del modelo Gemma 2.
 *   **Inyección**: Los recuerdos se añaden como "Hechos conocidos sobre el usuario" para que el LLM tenga conocimiento persistente más allá de la ventana de contexto de la conversación actual.
 
 ### Fase B: Generación de Pensamiento (Memorización)

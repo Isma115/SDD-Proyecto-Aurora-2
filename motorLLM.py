@@ -1,14 +1,60 @@
 import os
+import json
 from huggingface_hub import hf_hub_download
 from llama_cpp import Llama
 
 class MotorLLM:
-    def __init__(self, repo_id="bartowski/gemma-2-2b-it-GGUF", filename="gemma-2-2b-it-Q4_K_M.gguf"):
-        self.repo_id = repo_id
-        self.filename = filename
-        self.model_path = os.path.join("models", filename)
+    def __init__(self, config_path="config.json"):
+        self.config_path = config_path
+        self.config = self._load_or_create_config()
+        
+        # Guardamos datos base
+        self.repo_id = self.config["model"]["repo_id"]
+        self.filename = self.config["model"]["filename"]
+        self.model_path = os.path.join("models", self.filename)
         self.llm = None
         self._download_and_load_model()
+        
+    def _load_or_create_config(self):
+        default_config = {
+            "model": {
+                "repo_id": "bartowski/gemma-2-2b-it-GGUF",
+                "filename": "gemma-2-2b-it-Q4_K_M.gguf"
+            },
+            "initialization": {
+                "n_ctx": 4096,
+                "n_threads": None,
+                "n_gpu_layers": -1
+            },
+            "generation": {
+                "temperature": 0.7,
+                "top_p": 0.9,
+                "max_tokens": 512,
+                "repeat_penalty": 1.1
+            },
+            "thought": {
+                "temperature": 0.3,
+                "top_p": 0.9,
+                "max_tokens": 150,
+                "repeat_penalty": 1.1
+            }
+        }
+        
+        if os.path.exists(self.config_path):
+            try:
+                with open(self.config_path, "r", encoding="utf-8") as f:
+                    return json.load(f)
+            except Exception as e:
+                print(f"Error cargando config.json, usando valores por defecto: {e}")
+                return default_config
+        else:
+            try:
+                with open(self.config_path, "w", encoding="utf-8") as f:
+                    json.dump(default_config, f, indent=4)
+                print("Archivo config.json creado con valores por defecto.")
+            except Exception as e:
+                print(f"Error creando config.json: {e}")
+            return default_config
         
     def _download_and_load_model(self):
         os.makedirs("models", exist_ok=True)
@@ -28,9 +74,9 @@ class MotorLLM:
         print("Cargando modelo en memoria...")
         self.llm = Llama(
             model_path=self.model_path,
-            n_ctx=4096,  # Context window size
-            n_threads=None, # Use default threads
-            n_gpu_layers=-1, # Accelerate using Metal on Mac
+            n_ctx=self.config["initialization"]["n_ctx"],
+            n_threads=self.config["initialization"]["n_threads"],
+            n_gpu_layers=self.config["initialization"]["n_gpu_layers"],
             verbose=False
         )
         print("Modelo cargado correctamente.")
@@ -50,11 +96,13 @@ class MotorLLM:
                 messages.append(msg)
         
         # Using the chat_completion API from llama_cpp
+        max_t = self.config["generation"]["max_tokens"] if max_tokens == 512 else max_tokens
         response = self.llm.create_chat_completion(
             messages=messages,
-            max_tokens=max_tokens,
-            temperature=0.7,
-            top_p=0.9
+            max_tokens=max_t,
+            temperature=self.config["generation"]["temperature"],
+            top_p=self.config["generation"]["top_p"],
+            repeat_penalty=self.config["generation"]["repeat_penalty"]
         )
         
         return response["choices"][0]["message"]["content"]
@@ -65,11 +113,13 @@ class MotorLLM:
             {"role": "user", "content": prompt}
         ]
         
+        max_t = self.config["thought"]["max_tokens"] if max_tokens == 150 else max_tokens
         response = self.llm.create_chat_completion(
             messages=messages,
-            max_tokens=max_tokens,
-            temperature=0.3, # Baja temperatura para tareas analíticas/extracción
-            top_p=0.9
+            max_tokens=max_t,
+            temperature=self.config["thought"]["temperature"],
+            top_p=self.config["thought"]["top_p"],
+            repeat_penalty=self.config["thought"]["repeat_penalty"]
         )
         
         return response["choices"][0]["message"]["content"]
