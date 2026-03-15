@@ -1,0 +1,122 @@
+SISTEMA DE MEMORIA INTELIGENTE DE AURORA — v2
+=============================================
+
+════════════════════════════════════
+ EXPLICACIÓN SENCILLA
+════════════════════════════════════
+
+Antes, Aurora guardaba recuerdos como notas en un cuaderno y los buscaba de forma muy simple: solo miraba si las palabras del mensaje del usuario coincidían con palabras en las notas. Esto podía hacer que recuperara cosas poco relevantes.
+
+Ahora, el sistema funciona de forma más parecida a cómo razonan las personas:
+
+1. ENTENDER LA INTENCIÓN
+   Antes de buscar nada, Aurora le pregunta al propio modelo: "¿De qué tipo es esta pregunta?"
+   Por ejemplo:
+     - "¿Cuándo es mi cumpleaños?" → es un recuerdo personal
+     - "¿Cómo funciona la fotosíntesis?" → es conocimiento general
+     - "Hola, ¿cómo estás?" → es charla casual
+
+   Esto permite buscar en el lugar correcto en lugar de buscar en todos los lugares a la vez.
+
+2. RECUERDOS CON METADATOS
+   Cada recuerdo ya no es solo una frase suelta, sino un objeto que contiene:
+     - El texto del recuerdo
+     - La fecha en que fue memorizado
+     - Una categoría (recuerdo del usuario, de Aurora, o general)
+     - Palabras clave (etiquetas temáticas)
+     - Un contador de cuántas veces ese recuerdo ha sido útil
+
+3. PUNTUACIÓN DE RELEVANCIA
+   Al buscar, Aurora puntúa cada recuerdo en función de:
+     - Cuántas palabras del mensaje coinciden con el recuerdo
+     - Si el tema del recuerdo apareció antes en la conversación actual
+     - Qué tan reciente es el recuerdo (los muy antiguos puntúan un poco menos)
+     - Si ese recuerdo ya ha sido útil en conversaciones anteriores
+
+4. FILTRADO INTELIGENTE
+   Si hay muchos recuerdos candidatos, Aurora le pregunta al modelo cuáles de ellos
+   son realmente relevantes para la pregunta del usuario. Así evita incluir
+   información irrelevante que confundiría la respuesta.
+
+
+════════════════════════════════════
+ EXPLICACIÓN TÉCNICA DETALLADA
+════════════════════════════════════
+
+ARQUITECTURA GENERAL
+─────────────────────
+El sistema se divide entre dos módulos principales:
+
+  recursos.py   → Gestión de datos: búsqueda, scoring, persistencia, migración
+  gestorLLM.py  → Orquestación: intención, filtrado LLM, invocación de búsquedas
+
+ESTRUCTURA DE MEMORIA (memoria.json)
+──────────────────────────────────────
+Formato enriquecido por objeto:
+  {
+    "texto":     "El usuario se llama Ismael.",
+    "fecha":     "2026-03-15",          // ISO 8601
+    "categoria": "usuario",             // usuario | aurora | general
+    "etiquetas": ["ismael", "nombre"],  // palabras clave sin stopwords
+    "accesos":   3                      // veces que fue recuperado
+  }
+
+Retrocompatibilidad: al cargar un archivo antiguo con strings planos, el método
+_cargar_memoria() los migra automáticamente al nuevo formato y sobreescribe el
+archivo JSON. Esto es transparente para el usuario.
+
+CLASIFICACIÓN DE INTENCIÓN (_clasificar_intencion)
+────────────────────────────────────────────────────
+  1. Se construye un prompt zero-shot con los últimos 2 turnos de historial
+     más el mensaje actual.
+  2. Se invoca generate_thought() (temperatura 0.3, max_tokens=20) para obtener
+     una de 4 categorías: recuerdo_personal, conocimiento_general, tarea, charla.
+  3. Se parsea la salida buscando coincidencia de substring exacto.
+  4. Fallback a "charla" si el LLM no retorna una categoría válida.
+
+  Según la categoría, el flujo decide qué tipo de memoria consultar:
+    - recuerdo_personal → busca en memoria (recuerdos enriquecidos)
+    - conocimiento_general → busca en textos brutos de Recursos/conocimiento/
+    - tarea → busca en ambas
+    - charla → búsqueda de memoria opcional (p=0.8), sin conocimiento bruto
+
+SCORING DE RELEVANCIA (_score_recuerdo)
+─────────────────────────────────────────
+  score = intersección(palabras_contexto ∩ etiquetas_recuerdo)
+        + intersección / |etiquetas_recuerdo|        // bonus densidad
+        + 0.5 × intersección(etiquetas ∩ historial)  // bonus historial
+        - min(días_antigüedad / 365, 1.0)             // penalización antigüedad
+        + min(accesos × 0.1, 0.5)                     // bonus utilidad histórica
+
+  El contexto de búsqueda = mensaje_usuario + últimos 3 turnos del historial.
+  Esto hace que si el usuario habló de "cumpleaños" hace 2 mensajes y ahora
+  pregunta "¿lo recuerdas?", el recuerdo de cumpleaños aún puntúa alto.
+
+SCORING DE CONOCIMIENTO EN BRUTO (_score_fragmento_conocimiento)
+─────────────────────────────────────────────────────────────────
+  score = |intersección(palabras_consulta ∩ palabras_fragmento)|
+        + (|intersección| / |palabras_fragmento|) × 2  // bonus densidad
+        + 0.3 × |intersección(palabras_fragmento ∩ historial)|
+
+FILTRADO LLM DE CANDIDATOS (_filtrar_candidatos_llm)
+──────────────────────────────────────────────────────
+  Cuando buscar_recuerdos devuelve más de 3 candidatos, se invoca generate_thought()
+  con un prompt que lista los candidatos numerados y pide al modelo los índices
+  de los relevantes. La respuesta se parsea con regex (\d+). Fallback a [:3] del
+  original si el parseo falla.
+
+  Esto evita que el prompt de respuesta se sature con recuerdos irrelevantes
+  que podrían desviar a Aurora de la respuesta correcta.
+
+CONTADOR DE ACCESOS
+────────────────────
+  Cada vez que un recuerdo es recuperado y devuelto en buscar_recuerdos(), se
+  incrementa su campo "accesos" y se persiste en disco. Así, recuerdos que han
+  demostrado ser útiles en el pasado reciben un pequeño bonus en futuras búsquedas.
+
+MIGRACIÓN AUTOMÁTICA
+─────────────────────
+  Al detectar strings planos en memoria.json, _cargar_memoria() los convierte al
+  formato enriquecido usando _detectar_categoria() (heurísticas de palabras clave
+  para clasificar en usuario/aurora/general) y _extraer_palabras_clave() (tokenización
+  simple con lista de stopwords). El archivo se sobreescribe en ese momento.

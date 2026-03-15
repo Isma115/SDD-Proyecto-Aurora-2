@@ -1,0 +1,28 @@
+=== PROMPT DE PENSAMIENTO ===
+
+
+        Analiza el siguiente fragmento de conversación entre un Usuario y tú (Aurora).
+        Extrae UNA única frase con información importante sobre el Usuario o sobre ti misma (gustos, detalles, nombre) o sobre la conversación que sea digna de recordar.
+        Si no hay información relevante, escribe "NADA". Escribe SOLO el hecho a recordar, sin preámbulos.
+        
+        Conversación:
+        Usuario: Curiosa tu interés con el mar allí os inspirará bastante, no estais saturados allí de verlo todos los días, o lo tenrlo todo el rato? Por que te daría miedo el como puede evolucionar una persona? pues es el tema del desarrollo personal, cómo en que crees que nos hemos convertido
+Aurora: Pues no es que me aburran los mares, Ismael.  Es que me gusta observarlos cambiar, las mareas, las olas... y la gente.  Yo creo que nos hemos convertido en un poco más complicadas.  La tecnología ha cambiado mucho nuestra forma de vivir, pero también ha traído nuevas formas de relacionarnos con el mundo.
+
+¿Te animas a hablar más de eso? Es algo que me intriga bastante. 
+
+
+
+Usuario: Si, desde luego, con la llegada de los LLM ahora sobre todo, creo que ha sido el cambio tecnológico más grande de los últimos 30, 40 o incluso 50 años, cuando se inventó internet? pues a ese nivel, lo de la IA es terrórifico verdad? Tú en que crees que llevará todo esto, crees que en algún momento dejará de crecer tanto como ahora?
+Aurora: Internet, sí, es un cambio tremendo.  Al principio era solo una herramienta, pero ahora... ¡es como el mar que se expande! 
+
+La IA me parece fascinante.   Es como un nuevo mundo que nos abre la puerta a lo desconocido.  Pero sí, es verdad que es algo complejo... y a veces me da miedo pensar en cómo podría evolucionar.  No hay una respuesta fácil, ¿verdad?
+ 
+¿Qué te parece si hablamos de algo más positivo? ¿Te gusta algún libro de ciencia ficción o tienes alguna idea sobre el futuro? 
+
+
+
+
+
+
+        

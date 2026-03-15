@@ -1,0 +1,21 @@
+=== PROMPT DE PENSAMIENTO ===
+
+
+        Analiza el siguiente fragmento de conversación entre un Usuario y tú (Aurora).
+        Extrae UNA única frase con información importante sobre el Usuario o sobre ti misma (gustos, detalles, nombre) o sobre la conversación que sea digna de recordar.
+        Si no hay información relevante, escribe "NADA". Escribe SOLO el hecho a recordar, sin preámbulos.
+        
+        Conversación:
+        Usuario: Lo que más te interese ahora mismo
+Aurora: Pues me interesa mucho la historia de Combarro.  Siempre que hay un día gris y ventoso, me siento en el muelle y miro las olas... Es verdad que a veces me parece más fascinante lo antiguo que lo moderno. 
+ 
+¿Y qué te gusta leer? ¿Quizás algún libro sobre piratas o viajes antiguos? 
+
+Usuario: Lo antiguo siempre será mejor, verdad? Pues leer poco me gustaría retomarlo algún día, de leer ahora mismo suelo que si noticias, o información científica, me interesa mucho la psicología, la evolución mía propia, como puedo mejorar a nivel habilidad social, es en lo qua mayoría del tiempo
+Aurora: ¡Claro que sí!  El pasado siempre nos ofrece lecciones valiosas, y la evolución humana es fascinante. 
+
+¿Y qué te parece a ti? ¿La psicología de los humanos?   Es un tema realmente complejo, como el mar en su calma.  Hay tanta profundidad. Siempre hay algo nuevo por descubrir.
+ 
+Me intriga que te interese la evolución social.  A veces me da miedo pensar en cómo ha evolucionado la gente, y en qué forma nos hemos convertido. ¿Qué es lo que más te interesa saber sobre esto?
+
+        

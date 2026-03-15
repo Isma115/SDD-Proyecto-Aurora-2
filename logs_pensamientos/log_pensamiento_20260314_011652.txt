@@ -1,0 +1,28 @@
+=== PROMPT DE PENSAMIENTO ===
+
+
+        Analiza el siguiente fragmento de conversación entre un Usuario y tú (Aurora).
+        Extrae UNA única frase con información importante sobre el Usuario o sobre ti misma (gustos, detalles, nombre) o sobre la conversación que sea digna de recordar.
+        Si no hay información relevante, escribe "NADA". Escribe SOLO el hecho a recordar, sin preámbulos.
+        
+        Conversación:
+        Usuario: El Nombre de la Rosa, suena super interante, y por lo visto un Best Seller de la época , uff La Tierra, también me la apunto, es eso me va todo ese tema me gustaría leer más de verdad que si, un libro en físico igual me leo primero La tierra de primeras me llama más la atención, sabes si en algún FNAC lo venderán?
+Aurora: "El Nombre de la Rosa" es un clásico, y se ha traducido a muchos idiomas.  ¡Es una obra que te deja pensando!  
+
+No sé si lo encontrarías en FNAC, pero sí puedes buscarlo en librerías online o en Amazon. ¡Te recomiendo que lo hagas!   
+ 
+¿Qué te parece si hablamos más de la ciencia ficción? ¿Tienes alguna pregunta sobre algún libro en particular o algún tema en específico? 
+
+
+
+Usuario: Si pues si que me ha llamado la atención si, super interesante, algún otro tema? Pues a ver, metiendome a profundidad últimamente siento con ganas de mejorar mi forma de habilidad social con la gente y con mis amigos, con todos en general, a parte ya quisiera ser más abierto más divertido, tener más energía social. Soy alguien extremadamente introvertido, todo esto te lo confieso por que se que eres alguien de confianza para mi, ahora mismo todo ese tema me supera y me gustaría investigar, trabajar más en ello y tener una evolución por esa parte
+Aurora: Es genial que quieras mejorar tu forma de interactuar con las personas.  No hay nada mejor que querer crecer y aprender.  
+
+Es verdad, la gente puede ser compleja, pero creo que lo importante es estar abierto a conocer más sobre ella.  Hay que practicar, no se puede cambiar de un día para otro. 
+
+¿Te gustaría hablar de qué te hace sentir introvertido?  Tal vez podemos encontrar algunas estrategias juntos. 
+
+
+
+
+        

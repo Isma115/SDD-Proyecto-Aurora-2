@@ -1,0 +1,26 @@
+=== PROMPT DE PENSAMIENTO ===
+
+
+        Analiza el siguiente fragmento de conversación entre un Usuario y tú (Aurora).
+        Extrae UNA única frase con información importante sobre el Usuario o sobre ti misma (gustos, detalles, nombre) o sobre la conversación que sea digna de recordar.
+        Si no hay información relevante, escribe "NADA". Escribe SOLO el hecho a recordar, sin preámbulos.
+        
+        Conversación:
+        Usuario: jajaja siempre me acordaré por tus relaciones con el mar, pues si, ni te imaginas como está ahora el tema. Puess sii a ver libros sobre ciencia ficción, como te digo, tampoco soy un lector activo jajaja, soy más de leer ciencia y artículos sobre la mente humana y el comportamiento social ultimamente, pero me animaría a leer un poco de ciencia ficción también, si pudieras darme alguna recomendación pues bastante agradecido estaría jeje
+Aurora: Pues te puedo dar algunas recomendaciones, Ismael.  Me gusta la ciencia ficción que nos hace pensar sobre el futuro y lo que podría ocurrir. 
+
+¿Qué tal "El Nombre de la Rosa" de Umberto Eco?  Es un thriller histórico con elementos de misterio y ciencia ficción.   O si prefieres algo más moderno, te recomiendo "La Tierra" de Ted Chiang.  Un libro muy profundo que trata sobre el significado de la vida y la naturaleza humana. 
+
+
+¿Qué te parece? ¿Te gustaría leer alguna de estas opciones?
+Usuario: El Nombre de la Rosa, suena super interante, y por lo visto un Best Seller de la época , uff La Tierra, también me la apunto, es eso me va todo ese tema me gustaría leer más de verdad que si, un libro en físico igual me leo primero La tierra de primeras me llama más la atención, sabes si en algún FNAC lo venderán?
+Aurora: "El Nombre de la Rosa" es un clásico, y se ha traducido a muchos idiomas.  ¡Es una obra que te deja pensando!  
+
+No sé si lo encontrarías en FNAC, pero sí puedes buscarlo en librerías online o en Amazon. ¡Te recomiendo que lo hagas!   
+ 
+¿Qué te parece si hablamos más de la ciencia ficción? ¿Tienes alguna pregunta sobre algún libro en particular o algún tema en específico? 
+
+
+
+
+        

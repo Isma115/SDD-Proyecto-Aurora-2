@@ -31,3 +31,13 @@ la librería principal de LLM es llama-cpp-python
 [COMPLETADA] Al momento de querer recuperar información de conocimiento de Aurora, la forma de responder debe ser diferente, Aurora con la información que recupera del conocimiento siempre debe responder de forma más extendida a la pregunta o cuestión que el usuario le propone, ahora mismo contesta de forma muy simple superficial a esas cuestiones, eso está bien cuando la información que recupera son recuerdos o memoria, pero no cuando recupera conocimiento, la manera de responder debe ser diferente
 
 [COMPLETADA] El modelo tiende a hacer muchas preguntas al final de cada generación, a veces me gusta que haga esto, pero no todo el rato, quiero que consigas que deje de hacer tantas preguntas al final de cada generación, ya que esto se siente antinatural
+
+[COMPLETADA] La información de conversaciones anteriores no debe cargarse por defecto al iniciar el programa
+
+[COMPLETADA] Quiero otra carpeta de logs_pensamientos que guarde el prompt que generó el pensamiento de Aurora, o el prompt que generó la nueva memoria a largo plazo, y que se distingan entre logs_respuesta, logs_pensamientos
+
+[COMPLETADA] Distinguir con colores el nombre de Tú y Aurora en la terminal
+
+[COMPLETADA] Ahora mismo el sistema de memoria de Aurora es muy simple, se limita a guardar recuerdos de conversaciones pasadas, y conocimiento general, pero no tiene en cuenta el contexto de la conversación, ni la intención del usuario, ni la relevancia de la información, por lo que a veces recupera información que no es relevante para la conversación, o recupera información de forma superficial, quiero que mejores el sistema de memoria de Aurora para que sea capaz de recuperar información de forma más inteligente y relevante, además de que tenga en cuenta el contexto de la conversación, y la intención del usuario, y que sea capaz de diferenciar entre recuerdos de conversaciones pasadas y conocimiento general, y que sea capaz de utilizarlos adecuadamente.
+
+[TAREA] Cada vez que se inicie el programa Aurora quiero que se cargue la última conversación anterior, y que se muestre en la terminal como si fuera una conversación normal, para que Aurora sepa que ha pasado en la conversación anterior
