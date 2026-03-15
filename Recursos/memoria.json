@@ -1,14 +1,267 @@
 [
-    "Ismael necesita información sobre ciencia para su clase de hoy.",
-    "Ismael está interesado en aprender sobre ciencia y la evolución de la vida en la Tierra.",
-    "El Usuario muestra interés en temas relacionados con la ciencia, especialmente agujeros negros.",
-    "Ismael es un usuario interesado en aprender sobre agujeros negros.",
-    "Ismael es un estudiante que está preparando sus apuntes para clase sobre agujeros negros.",
-    "El Usuario disfruta de la literatura adolescente, artículos científicos y leyendas.",
-    "El usuario muestra interés en la historia, especialmente en la ciencia y los grandes descubrimientos.",
-    "Aurora disfruta de la historia y la evolución humana.",
-    "Aurora disfruta observando cómo cambian las mareas y la gente.",
-    "Aurora encuentra fascinante la IA y considera que es un nuevo mundo que nos abre la puerta a lo desconocido.",
-    "Ismael está interesado en leer ciencia ficción y menciona \"El Nombre de la Rosa\" y \"La Tierra\".",
-    "El usuario quiere mejorar su forma de interactuar con las personas y está buscando estrategias para ello."
+    {
+        "texto": "Ismael necesita información sobre ciencia para su clase de hoy.",
+        "fecha": "2026-03-15",
+        "categoria": "usuario",
+        "etiquetas": [
+            "ismael",
+            "necesita",
+            "información",
+            "ciencia",
+            "clase",
+            "hoy"
+        ],
+        "accesos": 0
+    },
+    {
+        "texto": "Ismael está interesado en aprender sobre ciencia y la evolución de la vida en la Tierra.",
+        "fecha": "2026-03-15",
+        "categoria": "usuario",
+        "etiquetas": [
+            "ismael",
+            "está",
+            "interesado",
+            "aprender",
+            "ciencia",
+            "evolución",
+            "vida",
+            "tierra"
+        ],
+        "accesos": 3
+    },
+    {
+        "texto": "El Usuario muestra interés en temas relacionados con la ciencia, especialmente agujeros negros.",
+        "fecha": "2026-03-15",
+        "categoria": "usuario",
+        "etiquetas": [
+            "usuario",
+            "muestra",
+            "interés",
+            "temas",
+            "relacionados",
+            "ciencia",
+            "especialmente",
+            "agujeros",
+            "negros"
+        ],
+        "accesos": 0
+    },
+    {
+        "texto": "Ismael es un usuario interesado en aprender sobre agujeros negros.",
+        "fecha": "2026-03-15",
+        "categoria": "usuario",
+        "etiquetas": [
+            "ismael",
+            "usuario",
+            "interesado",
+            "aprender",
+            "agujeros",
+            "negros"
+        ],
+        "accesos": 4
+    },
+    {
+        "texto": "Ismael es un estudiante que está preparando sus apuntes para clase sobre agujeros negros.",
+        "fecha": "2026-03-15",
+        "categoria": "usuario",
+        "etiquetas": [
+            "ismael",
+            "estudiante",
+            "está",
+            "preparando",
+            "sus",
+            "apuntes",
+            "clase",
+            "agujeros",
+            "negros"
+        ],
+        "accesos": 2
+    },
+    {
+        "texto": "El Usuario disfruta de la literatura adolescente, artículos científicos y leyendas.",
+        "fecha": "2026-03-15",
+        "categoria": "usuario",
+        "etiquetas": [
+            "usuario",
+            "disfruta",
+            "literatura",
+            "adolescente",
+            "artículos",
+            "científicos",
+            "leyendas"
+        ],
+        "accesos": 0
+    },
+    {
+        "texto": "El usuario muestra interés en la historia, especialmente en la ciencia y los grandes descubrimientos.",
+        "fecha": "2026-03-15",
+        "categoria": "usuario",
+        "etiquetas": [
+            "usuario",
+            "muestra",
+            "interés",
+            "historia",
+            "especialmente",
+            "ciencia",
+            "grandes",
+            "descubrimientos"
+        ],
+        "accesos": 2
+    },
+    {
+        "texto": "Aurora disfruta de la historia y la evolución humana.",
+        "fecha": "2026-03-15",
+        "categoria": "aurora",
+        "etiquetas": [
+            "aurora",
+            "disfruta",
+            "historia",
+            "evolución",
+            "humana"
+        ],
+        "accesos": 0
+    },
+    {
+        "texto": "Aurora disfruta observando cómo cambian las mareas y la gente.",
+        "fecha": "2026-03-15",
+        "categoria": "aurora",
+        "etiquetas": [
+            "aurora",
+            "disfruta",
+            "observando",
+            "cambian",
+            "mareas",
+            "gente"
+        ],
+        "accesos": 3
+    },
+    {
+        "texto": "Aurora encuentra fascinante la IA y considera que es un nuevo mundo que nos abre la puerta a lo desconocido.",
+        "fecha": "2026-03-15",
+        "categoria": "aurora",
+        "etiquetas": [
+            "aurora",
+            "encuentra",
+            "fascinante",
+            "considera",
+            "nuevo",
+            "mundo",
+            "nos",
+            "abre",
+            "puerta",
+            "desconocido"
+        ],
+        "accesos": 0
+    },
+    {
+        "texto": "Ismael está interesado en leer ciencia ficción y menciona \"El Nombre de la Rosa\" y \"La Tierra\".",
+        "fecha": "2026-03-15",
+        "categoria": "usuario",
+        "etiquetas": [
+            "ismael",
+            "está",
+            "interesado",
+            "leer",
+            "ciencia",
+            "ficción",
+            "menciona",
+            "nombre",
+            "rosa",
+            "tierra"
+        ],
+        "accesos": 1
+    },
+    {
+        "texto": "El usuario quiere mejorar su forma de interactuar con las personas y está buscando estrategias para ello.",
+        "fecha": "2026-03-15",
+        "categoria": "usuario",
+        "etiquetas": [
+            "usuario",
+            "quiere",
+            "mejorar",
+            "forma",
+            "interactuar",
+            "personas",
+            "está",
+            "buscando",
+            "estrategias",
+            "ello"
+        ],
+        "accesos": 0
+    },
+    {
+        "texto": "\"Me suena a algo que me gustaría recordar\".",
+        "fecha": "2026-03-15",
+        "categoria": "aurora",
+        "etiquetas": [
+            "suena",
+            "algo",
+            "gustaría",
+            "recordar"
+        ],
+        "accesos": 4
+    },
+    {
+        "texto": "\"La gente aquí se dedica a la pesca y no es algo común ver peces en las playas.\"",
+        "fecha": "2026-03-15",
+        "categoria": "general",
+        "etiquetas": [
+            "gente",
+            "aquí",
+            "dedica",
+            "pesca",
+            "algo",
+            "común",
+            "ver",
+            "peces",
+            "playas"
+        ],
+        "accesos": 5
+    },
+    {
+        "texto": "\"Mi familia siempre me ha enseñado a pescar y a amar el mar.\"",
+        "fecha": "2026-03-15",
+        "categoria": "general",
+        "etiquetas": [
+            "familia",
+            "siempre",
+            "enseñado",
+            "pescar",
+            "amar",
+            "mar"
+        ],
+        "accesos": 1
+    },
+    {
+        "texto": "Aurora es experta en pescar con caña, redes y pesca submarina.",
+        "fecha": "2026-03-15",
+        "categoria": "aurora",
+        "etiquetas": [
+            "aurora",
+            "experta",
+            "pescar",
+            "caña",
+            "redes",
+            "pesca",
+            "submarina"
+        ],
+        "accesos": 2
+    },
+    {
+        "texto": "\"Combarro tiene mucha vida marina, así que te aseguro que encontraras algo interesante\".",
+        "fecha": "2026-03-15",
+        "categoria": "usuario",
+        "etiquetas": [
+            "combarro",
+            "mucha",
+            "vida",
+            "marina",
+            "así",
+            "aseguro",
+            "encontraras",
+            "algo",
+            "interesante"
+        ],
+        "accesos": 1
+    }
 ]

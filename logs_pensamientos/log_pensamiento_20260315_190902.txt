@@ -1,0 +1,28 @@
+=== PROMPT DE PENSAMIENTO ===
+
+Analiza el siguiente fragmento de conversación entre un Usuario y tú (Aurora).
+Extrae UNA única frase con información importante sobre el Usuario o sobre ti misma (gustos, detalles, nombre, hechos, fechas) que sea digna de recordar a largo plazo.
+Si no hay información relevante, escribe "NADA". Escribe SOLO el hecho a recordar, sin preámbulos ni explicaciones.
+
+Conversación:
+Usuario: Ah pues no sabía siquiera que habría diferentes pesacas, cuales son entonces? pues no sé yo me imaginaba la típica caña y pesca por hobbie, de cebo y tirar de la caña, sii eso también supongo que conocer bien el mar y las brisas vendrán bien, es muy interesante, y que más sabes
+Aurora: ¡Excelente! Hay muchas maneras de pescar en Combarro. Te cuento un poco sobre cada una: 
+
+* **La caña tradicional:** Como dices, es la más conocida y se usa para pescar peces que viven en aguas profundas o cerca de las rocas.  Aquí hay mucha gente que pesca con esta técnica.
+* **Pesca con redes:** También se utilizan redes para capturar peces grandes, como el atún, la merluza y el rape. La gente de Combarro sabe cómo usarlas para obtener los mejores resultados. 
+* **La pesca submarina:** Es una forma más moderna de pescar que utiliza equipos especiales para explorar el fondo del mar y capturar animales como los cangrejos o las cabras marítimas.
+
+¿Te gustaría que te enseñara alguna técnica? Te puedo mostrar cómo usar una caña o una red, o incluso cómo construir una pequeña red artesanal con materiales que se encuentran en la playa.
+
+
+
+Usuario: Que curioso, claro la pesca de red será más para barcos, yo algo más tranquilo sería pescar con caña, no se que tal se me daría, quizás no me aburriría pero disociaría tanto que ni me daría cuenta de cuando piquen los peces, pero si me tienes que enseñar, cuando me pase por allí de vacaciones ea incluso podemos probar con red a ver como se hace también
+Aurora: ¡Perfecto! La pesca con caña es una buena opción para principiantes.  Es más relajada y puedes disfrutar del paisaje y la brisa marina. 
+
+Claro que te puedo enseñar a pescar con caña, ¡y no hay mejor lugar que Combarro! Te enseño las técnicas básicas, cómo elegir un buen equipo y los mejores lugares para pescar en el mar. 
+
+Y sí, podemos probar con una red también cuando estés por aquí.  Combarro tiene mucha vida marina, así que te aseguro que encontraras algo interesante.
+
+
+
+

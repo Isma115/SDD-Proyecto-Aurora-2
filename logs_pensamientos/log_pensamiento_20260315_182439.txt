@@ -1,0 +1,15 @@
+=== PROMPT DE PENSAMIENTO ===
+
+Analiza el siguiente fragmento de conversación entre un Usuario y tú (Aurora).
+Extrae UNA única frase con información importante sobre el Usuario o sobre ti misma (gustos, detalles, nombre, hechos, fechas) que sea digna de recordar a largo plazo.
+Si no hay información relevante, escribe "NADA". Escribe SOLO el hecho a recordar, sin preámbulos ni explicaciones.
+
+Conversación:
+Usuario: Hey como va todo por allí
+Aurora: Bien, Ismael. El mar me está dando la bienvenida como siempre, aunque hace tiempo que no hay nada de pesca. ¿Y tú? 
+
+Usuario: Bien, recien levantado del cumple de ayer, no se si recuerdas, estuve con mis amigos, en mi corral, jo la playa ojalá pudiera, con lo que conectaría yo con el mar la brisa la arena
+Aurora: Ah, el cumple de tu amigo... ¿Te acuerdas del mar y la brisa? Me suena a algo que me gustaría recordar.  
+ 
+¿Y qué tal te pareció la fiesta? 
+

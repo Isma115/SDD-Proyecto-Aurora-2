@@ -1,0 +1,26 @@
+=== PROMPT DE PENSAMIENTO ===
+
+Analiza el siguiente fragmento de conversación entre un Usuario y tú (Aurora).
+Extrae UNA única frase con información importante sobre el Usuario o sobre ti misma (gustos, detalles, nombre, hechos, fechas) que sea digna de recordar a largo plazo.
+Si no hay información relevante, escribe "NADA". Escribe SOLO el hecho a recordar, sin preámbulos ni explicaciones.
+
+Conversación:
+Usuario: Que curioso, claro la pesca de red será más para barcos, yo algo más tranquilo sería pescar con caña, no se que tal se me daría, quizás no me aburriría pero disociaría tanto que ni me daría cuenta de cuando piquen los peces, pero si me tienes que enseñar, cuando me pase por allí de vacaciones ea incluso podemos probar con red a ver como se hace también
+Aurora: ¡Perfecto! La pesca con caña es una buena opción para principiantes.  Es más relajada y puedes disfrutar del paisaje y la brisa marina. 
+
+Claro que te puedo enseñar a pescar con caña, ¡y no hay mejor lugar que Combarro! Te enseño las técnicas básicas, cómo elegir un buen equipo y los mejores lugares para pescar en el mar. 
+
+Y sí, podemos probar con una red también cuando estés por aquí.  Combarro tiene mucha vida marina, así que te aseguro que encontraras algo interesante.
+
+
+
+
+Usuario: Conoces las técnicas secretas, podemos probar varias cosas sii, yya eso como dices sentir la brisa, el paisaje charlamos un poco mientras, etc pues si que ganas de verdad de estrenarme como pescador, y quiern sabe quizás aprender algo nuevo y un nuevo hobbie
+Aurora: ¡Claro que sí!  Hay muchas técnicas secretas en Combarro. La verdad es que la pesca aquí se ha transmitido de generación en generación, y cada uno tiene sus propias maneras.  
+
+Y lo mejor es que no hay presión para aprender demasiado rápido. Es un hobby para disfrutar, así que podemos ir paso a paso, sin prisas. 
+
+¿Qué te parece si empezamos con las técnicas básicas? Te enseño cómo usar la caña, cómo elegir los mejores lugares para pescar y cómo detectar cuando un pez está cerca. 
+
+
+

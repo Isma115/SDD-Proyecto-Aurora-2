@@ -16,7 +16,7 @@ class GestorRecursos:
     # ─────────────────────────────────────────────────────────────────────────
 
     def _cargar_memoria(self):
-        """Carga memoria.json y migra automáticamente strings viejos al nuevo formato."""
+        """Carga memoria.json (lista de strings) y construye dicts enriquecidos en memoria."""
         if not os.path.exists(self.archivo_memoria):
             return []
         try:
@@ -25,49 +25,45 @@ class GestorRecursos:
             if not isinstance(datos, list):
                 return []
 
-            migrados = []
             hoy = datetime.date.today().isoformat()
+            enriquecidos = []
             for entrada in datos:
+                # Soportar tanto strings (formato guardado) como dicts (por si acaso)
                 if isinstance(entrada, str):
-                    # Migración: string plano → objeto enriquecido
-                    obj = {
-                        "texto": entrada.strip(),
-                        "fecha": hoy,
-                        "categoria": self._detectar_categoria(entrada),
-                        "etiquetas": self._extraer_palabras_clave(entrada),
-                        "accesos": 0
-                    }
-                    migrados.append(obj)
+                    texto = entrada.strip()
                 elif isinstance(entrada, dict) and "texto" in entrada:
-                    # Asegurar campos mínimos
-                    entrada.setdefault("fecha", hoy)
-                    entrada.setdefault("categoria", self._detectar_categoria(entrada["texto"]))
-                    entrada.setdefault("etiquetas", self._extraer_palabras_clave(entrada["texto"]))
-                    entrada.setdefault("accesos", 0)
-                    migrados.append(entrada)
+                    texto = entrada["texto"].strip()
+                else:
+                    continue
+                if not texto:
+                    continue
+                enriquecidos.append({
+                    "texto": texto,
+                    "fecha": hoy,
+                    "categoria": self._detectar_categoria(texto),
+                    "etiquetas": self._extraer_palabras_clave(texto),
+                    "accesos": 0
+                })
 
             # Eliminar duplicados por texto normalizado
             vistos = set()
             limpios = []
-            for r in migrados:
+            for r in enriquecidos:
                 norm = self._normalizar_texto(r["texto"])
                 if norm not in vistos:
                     vistos.add(norm)
                     limpios.append(r)
-
-            # Si hubo migración (strings viejos), guardamos el archivo actualizado
-            if any(isinstance(e, str) for e in datos):
-                self._persistir_memoria(limpios)
-                print("[Memoria migrada al nuevo formato enriquecido]")
 
             return limpios
         except (json.JSONDecodeError, Exception):
             return []
 
     def _persistir_memoria(self, datos):
+        """Guarda solo los textos como lista de strings en memoria.json."""
         try:
+            strings = [r["texto"] if isinstance(r, dict) else str(r) for r in datos]
             with open(self.archivo_memoria, "w", encoding="utf-8") as f:
-                json.dump(datos, f, ensure_ascii=False, indent=4)
+                json.dump(strings, f, ensure_ascii=False, indent=4)
         except Exception as e:
             print(f"[Error guardando memoria]: {e}")
 

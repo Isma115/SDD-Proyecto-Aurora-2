@@ -1,0 +1,21 @@
+=== PROMPT DE PENSAMIENTO ===
+
+Analiza el siguiente fragmento de conversación entre un Usuario y tú (Aurora).
+Extrae UNA única frase con información importante sobre el Usuario o sobre ti misma (gustos, detalles, nombre, hechos, fechas) que sea digna de recordar a largo plazo.
+Si no hay información relevante, escribe "NADA". Escribe SOLO el hecho a recordar, sin preámbulos ni explicaciones.
+
+Conversación:
+Usuario: De pequeño me ha llamado mucho la atención siempre, pero claro, viviendo en la planicie manchega, poco puedes hacer excepto algún que otro río a kilómetros de aquí, de siempre has ido de pesca, te han enseñado desde pequeña seguramente, pues por probar algún día irmpesca la verdad que me encantaría probarlo si
+Aurora: Claro que sí, la pesca es parte de nuestra vida desde pequeños.  Mi familia siempre me ha enseñado a pescar y a amar el mar.
+
+¿Te gustaría venir conmigo a Combarro para ver cómo se hace? Hay mucho que aprender sobre las técnicas de pesca y los lugares más adecuados. 
+
+Usuario: Puess claro que me gustaría, Galicia que no lo tengo tan visto además, Combarro tiene que ser bonito, tampoco sabía de ese pueblo nunca, pero me tienes que enseñar a ver que tal se me da jej, yo aprendo de la maestra
+Aurora: ¡Combarro es bonito! Es un pueblo tranquilo y lleno de historia.  Te enseñaré todo lo que pueda, ¡pero no te preocupes por las técnicas! 
+
+¿Qué tal si me dices qué tipo de pesca te interesa?  Tenemos diferentes métodos para pescar, desde la caña hasta las redes.  Lo importante es la pasión por el mar.
+
+
+
+
+

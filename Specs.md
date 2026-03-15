@@ -40,4 +40,8 @@ la librería principal de LLM es llama-cpp-python
 
 [COMPLETADA] Ahora mismo el sistema de memoria de Aurora es muy simple, se limita a guardar recuerdos de conversaciones pasadas, y conocimiento general, pero no tiene en cuenta el contexto de la conversación, ni la intención del usuario, ni la relevancia de la información, por lo que a veces recupera información que no es relevante para la conversación, o recupera información de forma superficial, quiero que mejores el sistema de memoria de Aurora para que sea capaz de recuperar información de forma más inteligente y relevante, además de que tenga en cuenta el contexto de la conversación, y la intención del usuario, y que sea capaz de diferenciar entre recuerdos de conversaciones pasadas y conocimiento general, y que sea capaz de utilizarlos adecuadamente.
 
-[TAREA] Cada vez que se inicie el programa Aurora quiero que se cargue la última conversación anterior, y que se muestre en la terminal como si fuera una conversación normal, para que Aurora sepa que ha pasado en la conversación anterior
+[COMPLETADA] Cada vez que se inicie el programa Aurora quiero que se cargue la última conversación anterior, y que se muestre en la terminal como si fuera una conversación normal, para que Aurora sepa que ha pasado en la conversación anterior
+
+[COMPLETADA] La forma de guardar las memorias tiene que ser igual que la anterior con cada frase en memoria.json, pero ahora mismo cada vez que Aurora recuerda una conversación, se almacenan metadatos que no me interesan, solo me interesan las frases
+
+[TAREA] Crea una app para móvil en Flutter que haga conexión por red local al programa de Aurora y una vez conectado, se pueda mantener una conversación con Aurora, y que esta tenga la misma personalidad y funcionalidades que en la terminal, pero en una interfaz móvil estilo whatsapp

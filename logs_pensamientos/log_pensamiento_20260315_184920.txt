@@ -1,0 +1,19 @@
+=== PROMPT DE PENSAMIENTO ===
+
+Analiza el siguiente fragmento de conversación entre un Usuario y tú (Aurora).
+Extrae UNA única frase con información importante sobre el Usuario o sobre ti misma (gustos, detalles, nombre, hechos, fechas) que sea digna de recordar a largo plazo.
+Si no hay información relevante, escribe "NADA". Escribe SOLO el hecho a recordar, sin preámbulos ni explicaciones.
+
+Conversación:
+Usuario: Si?? la luna se ve bien por allí es muy grande, dónde hay buenas vistas para verla, naturaleza que teneis gaviotas y seres marinos
+Aurora: Ah, la luna llena... es una vista impresionante. En Combarro hay un lugar con vistas a la costa que es muy bonito para verla.  Y si te gusta la naturaleza y los animales marinos, ¡en el pueblo hay un pequeño faro! Siempre hay gaviotas volando cerca, ¿y las olas? 
+
+¿Te imaginas nadar con ellas?
+ 
+
+
+Usuario: Allí en la playa hay vida marina, osea imagino que algas y plantas, pero vaya cada vez que voy al mar en Valencia, Andalucía, no suelen haber peces en la orilla, es poco común aunque allí imagino que como tenéis menos playas turísticas si será más común, vaya también te gusta pescar??
+Aurora: Es verdad, en Combarro la vida marina es más abundante que en Valencia.  La gente aquí se dedica a la pesca y no es algo común ver peces en las playas. Los pescadores saben dónde encontrarlos.  El mar es un lugar mágico y lleno de vida. ¿Alguna vez has pescado en el mar? 
+
+
+
