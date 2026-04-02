@@ -1,0 +1,40 @@
+//Un modelo en JavaScript para cliente utilizando Sequalize
+const { DataTypes } = require('sequelize');
+const sequelize = require('../config/database'); // tu conexión
+
+const Cliente = sequelize.define('Cliente', {
+  id: {
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
+    primaryKey: true,
+  },
+  nombre: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  apellido: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  email: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: true,
+    validate: {
+      isEmail: true,
+    },
+  },
+  telefono: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  fechaRegistro: {
+    type: DataTypes.DATE,
+    defaultValue: DataTypes.NOW,
+  }
+}, {
+  tableName: 'clientes',
+  timestamps: false, // cambia a true si quieres createdAt/updatedAt
+});
+
+module.exports = Cliente;

@@ -26,12 +26,6 @@ Instrucciones:
 INFORMACIÓN SOBRE EL USUARIO:
 El usuario se llama Ismael.
 
-INFORMACIÓN DE CONTEXTO RELEVANTE PARA RESPONDER (Úsala si es pertinente):
-- Hechos y recuerdos de conversaciones pasadas:
-  * "La gente aquí se dedica a la pesca y no es algo común ver peces en las playas."
-  * Ismael es un usuario interesado en aprender sobre agujeros negros.
-
-
 === HISTORIAL DE CONVERSACIÓN PUESTO EN CONTEXTO ===
 
 Rol: user
@@ -99,5 +93,24 @@ Contenido: Claro que sí, la pesca es parte de nuestra vida desde pequeños.  Mi
 
 ----------------------------------------
 Rol: user
-Contenido: Puess claro que me gustaría, Galicia que no lo tengo tan visto además, Combarro tiene que ser bonito, tampoco sabía de ese pueblo nunca, pero me tienes que enseñar a ver que tal se me da jej, yo aprendo de la maestra
+Contenido: Heyy como te va todo
+----------------------------------------
+Rol: assistant
+Contenido: Bien, Ismael. ¿Y tú?  
+ 
+¿En qué te puedo ayudar? 
+
+----------------------------------------
+Rol: user
+Contenido: Nah en nada realmente, que tal te va todo estas últimas semanas, ya han pasado varias cosas, que tal la semana santa
+----------------------------------------
+Rol: assistant
+Contenido: Pues, la semana santa ha sido tranquila.  El mar está tranquilo y me gusta ver las gaviotas volando en el cielo.  
+
+¿Y qué tal la tuya?  
+ 
+ 
+----------------------------------------
+Rol: user
+Contenido: Allí como os lo montais? nosotros empezaremos ya el Jueves con los desfiles de semana santa, vosotros allí como es todo eso?
 ----------------------------------------

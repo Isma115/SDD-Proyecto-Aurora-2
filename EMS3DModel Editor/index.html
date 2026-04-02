@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EMS 3D Model Editor</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="panel">
+        <p class="eyebrow">Modelado 3D por bloques fusionados</p>
+        <h1>EMS 3D Model Editor</h1>
+        <p class="intro">
+          Construye volúmenes continuos: las caras internas desaparecen y la
+          malla final se regenera como una sola pieza optimizada.
+        </p>
+
+        <section class="toolbar">
+          <label class="field" for="shapeSelect">
+            <span>Figura activa</span>
+            <select id="shapeSelect"></select>
+          </label>
+
+          <div class="buttonRow">
+            <button id="placeButton" type="button">Colocar</button>
+            <button id="exportButton" type="button">Exportar OBJ</button>
+            <button id="resetButton" type="button" class="ghost">
+              Reiniciar
+            </button>
+          </div>
+        </section>
+
+        <section class="stats">
+          <article>
+            <span>Cursor</span>
+            <strong id="cursorReadout">0, 0, 0</strong>
+          </article>
+          <article>
+            <span>Celdas</span>
+            <strong id="voxelReadout">0</strong>
+          </article>
+          <article>
+            <span>Triángulos</span>
+            <strong id="triangleReadout">0</strong>
+          </article>
+        </section>
+
+        <section class="help">
+          <h2>Controles</h2>
+          <ul>
+            <li>Flechas: colocan la figura según la orientación actual de la cámara.</li>
+            <li><kbd>Q</kbd>/<kbd>E</kbd> o <kbd>PgUp</kbd>/<kbd>PgDn</kbd>: subir o bajar.</li>
+            <li><kbd>Espacio</kbd> o <kbd>Enter</kbd>: colocar sin mover.</li>
+            <li>Ratón: orbitar, desplazar y hacer zoom en la cámara.</li>
+          </ul>
+          <p class="note">
+            El sistema ya admite figuras compuestas por varias celdas sin crear
+            cubos independientes ni geometría interna sobrante.
+          </p>
+        </section>
+      </aside>
+
+      <main class="viewport">
+        <canvas id="viewportCanvas" aria-label="Editor 3D"></canvas>
+        <div class="floatingTag">
+          Editor voxel con mallado fusionado y exportación OBJ
+        </div>
+      </main>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

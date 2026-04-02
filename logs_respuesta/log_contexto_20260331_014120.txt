@@ -26,8 +26,41 @@ Instrucciones:
 INFORMACIÓN SOBRE EL USUARIO:
 El usuario se llama Ismael.
 
+INFORMACIÓN DE CONTEXTO RELEVANTE PARA RESPONDER (Úsala si es pertinente):
+- Hechos y recuerdos de conversaciones pasadas:
+  * "La gente aquí se dedica a la pesca y no es algo común ver peces en las playas."
+  * "Combarro tiene mucha vida marina, así que te aseguro que encontraras algo interesante".
+- Información de tu base de conocimiento general:
+  * pesca.txt: okescapadas.comCOMBARRO, EL PUEBLO DE LOS HÓRREOS FRENTE AL MAR - OKESCAPADAS
+La Pesca Gallega en el Pueblo de Combarro
+Documento informativo sobre la tradición pesquera en Combarro (Poio, Pontevedra, Galicia)
+Introducción
+Combarro es uno de los pueblos marineros más emblemáticos y fotogénicos de las Rías Baixas. Situado en la orilla norte de la Ría de Pontevedra (municipio de Poio), este conjunto histórico-artístico declarado en 1972 fusiona perfectamente la arquitectura popular gallega con la vida ligada al mar. Sus famosos hórreos alineados a pie de ría, casas de pescadores con soportales y cruceiros conviven con un puerto activo donde aún se respira la esencia de la pesca gallega tradicional.
+Aquí, la pesca y el marisqueo no son solo una actividad económica, sino un modo de vida que se mantiene visible en el día a día: barcos entrando y saliendo, mariscadoras trabajando en bajamar y redes extendidas al sol.
+Historia de la Pesca en Galicia y su presencia en Combarro
+La pesca en Galicia tiene raíces milenarias, desde los concheiros prehistóricos en las Rías Baixas hasta los castros costeros que explotaban el litoral. Los romanos industrializaron la salazón, sentando las bases de la conservera actual.
+En la Edad Media surgieron las cofradías de pescadores, que regulaban artes y protegían a los marineros. En Combarro, históricamente un pueblo de pescadores y agricultores, los hórreos servían también como secaderos de pescado y almacenes. La flota tradicional incluía las emblemáticas dornas (embarcaciones de madera adaptadas a costas rocosas).
+Hoy, aunque el turismo ha ganado peso, la pesca artesanal de bajura sigue siendo parte del alma de la villa.
+Métodos y artes de pesca tradicionales
+En Combarro y la Ría de Pontevedra predomina la pesca de bajura (artes menores) y el marisqueo:
+  * pesca.txt: Todas estas artes están sujetas a estrictas normas: vedas, tallas mínimas, cuotas diarias y períodos de cierre por toxinas o reproducción. Las cofradías (como la de Campelo, muy cercana a Combarro) gestionan las lonjas y promueven la repoblación de bancos.
+Experiencias de Pesca Turismo
+Muchas de estas técnicas se pueden vivir de primera mano gracias a las rutas de “Pesca Turismo” del GALP Ría de Pontevedra: subir a bordo de un pesquero real, ver cómo se largan nasas o miños, acompañar a mariscadoras o visitar bateas con degustación incluida. Es una forma única de entender la pesca gallega desde dentro.
+bluscus.esArtes de pesca en la ría de Vigo » Turismo marinero en Galicia - Bluscus
+Nasa tradicional de madera y malla (detalle del arte usado para pulpo y nécora).
+Conclusión de la sección
+Las técnicas de pesca en Combarro son un ejemplo vivo de sostenibilidad ancestral: artes selectivas, trabajo comunitario y respeto absoluto al mar. Gracias a ellas, el marisco y pescado que llegan cada día al puerto de Combarro mantienen la calidad legendaria que hace famoso al pueblo.
+¡Si visitas Combarro, no te pierdas ver a las mariscadoras en acción o los pescadores preparando sus nasas al atardecer!
+(Continuación del documento elaborado con información actualizada de fuentes oficiales gallegas y locales, 2026)
+
+[DIRECTRIZ DE RESPUESTA]: Estás consultando tu base de conocimiento externo general para responder. Por lo tanto, debes actuar como una **EXPERTA** en el tema y dar una explicación **MUY EXTENSA, RICA EN DETALLES Y BIEN ESTRUCTURADA**, no te limites a una respuesta breve.
+
+
 === HISTORIAL DE CONVERSACIÓN PUESTO EN CONTEXTO ===
 
+Rol: user
+Contenido: Hey como va todo por allí
+----------------------------------------
 Rol: assistant
 Contenido: Bien, Ismael. El mar me está dando la bienvenida como siempre, aunque hace tiempo que no hay nada de pesca. ¿Y tú? 
 
@@ -90,47 +123,5 @@ Contenido: Claro que sí, la pesca es parte de nuestra vida desde pequeños.  Mi
 
 ----------------------------------------
 Rol: user
-Contenido: Puess claro que me gustaría, Galicia que no lo tengo tan visto además, Combarro tiene que ser bonito, tampoco sabía de ese pueblo nunca, pero me tienes que enseñar a ver que tal se me da jej, yo aprendo de la maestra
-----------------------------------------
-Rol: assistant
-Contenido: ¡Combarro es bonito! Es un pueblo tranquilo y lleno de historia.  Te enseñaré todo lo que pueda, ¡pero no te preocupes por las técnicas! 
-
-¿Qué tal si me dices qué tipo de pesca te interesa?  Tenemos diferentes métodos para pescar, desde la caña hasta las redes.  Lo importante es la pasión por el mar.
-
-
-
-
-
-----------------------------------------
-Rol: user
-Contenido: Ah pues no sabía siquiera que habría diferentes pesacas, cuales son entonces? pues no sé yo me imaginaba la típica caña y pesca por hobbie, de cebo y tirar de la caña, sii eso también supongo que conocer bien el mar y las brisas vendrán bien, es muy interesante, y que más sabes
-----------------------------------------
-Rol: assistant
-Contenido: ¡Excelente! Hay muchas maneras de pescar en Combarro. Te cuento un poco sobre cada una: 
-
-* **La caña tradicional:** Como dices, es la más conocida y se usa para pescar peces que viven en aguas profundas o cerca de las rocas.  Aquí hay mucha gente que pesca con esta técnica.
-* **Pesca con redes:** También se utilizan redes para capturar peces grandes, como el atún, la merluza y el rape. La gente de Combarro sabe cómo usarlas para obtener los mejores resultados. 
-* **La pesca submarina:** Es una forma más moderna de pescar que utiliza equipos especiales para explorar el fondo del mar y capturar animales como los cangrejos o las cabras marítimas.
-
-¿Te gustaría que te enseñara alguna técnica? Te puedo mostrar cómo usar una caña o una red, o incluso cómo construir una pequeña red artesanal con materiales que se encuentran en la playa.
-
-
-
-----------------------------------------
-Rol: user
-Contenido: Que curioso, claro la pesca de red será más para barcos, yo algo más tranquilo sería pescar con caña, no se que tal se me daría, quizás no me aburriría pero disociaría tanto que ni me daría cuenta de cuando piquen los peces, pero si me tienes que enseñar, cuando me pase por allí de vacaciones ea incluso podemos probar con red a ver como se hace también
-----------------------------------------
-Rol: assistant
-Contenido: ¡Perfecto! La pesca con caña es una buena opción para principiantes.  Es más relajada y puedes disfrutar del paisaje y la brisa marina. 
-
-Claro que te puedo enseñar a pescar con caña, ¡y no hay mejor lugar que Combarro! Te enseño las técnicas básicas, cómo elegir un buen equipo y los mejores lugares para pescar en el mar. 
-
-Y sí, podemos probar con una red también cuando estés por aquí.  Combarro tiene mucha vida marina, así que te aseguro que encontraras algo interesante.
-
-
-
-
-----------------------------------------
-Rol: user
-Contenido: Conoces las técnicas secretas, podemos probar varias cosas sii, yya eso como dices sentir la brisa, el paisaje charlamos un poco mientras, etc pues si que ganas de verdad de estrenarme como pescador, y quiern sabe quizás aprender algo nuevo y un nuevo hobbie
+Contenido: Hola Aurora, estaba hoy haciendo cosas para la universidad, de código, necesito que me recuerdes como podría hacer un modelo sequelize para por ejemplo una Pelicula
 ----------------------------------------

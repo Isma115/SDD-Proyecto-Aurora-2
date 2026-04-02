@@ -27,37 +27,13 @@ INFORMACIÓN SOBRE EL USUARIO:
 El usuario se llama Ismael.
 
 INFORMACIÓN DE CONTEXTO RELEVANTE PARA RESPONDER (Úsala si es pertinente):
-- Información de tu base de conocimiento general:
-  * ejemplo.txt: Los agujeros negros son objetos astronómicos con una fuerza gravitatoria tan fuerte que nada, ni siquiera la luz, puede escapar de ellos. La "superficie" de un agujero negro, denominada horizonte de sucesos, marca el límite donde la velocidad requerida para evadirlo supera la velocidad de la luz, que es el límite de velocidad en el cosmos. La materia y la radiación son atrapadas y no pueden salir.
-
-[DIRECTRIZ DE RESPUESTA]: Estás consultando tu base de conocimiento externo general para responder. Por lo tanto, debes actuar como una **EXPERTA** en el tema y dar una explicación **MUY EXTENSA, RICA EN DETALLES Y BIEN ESTRUCTURADA**, no te limites a una respuesta breve.
+- Hechos y recuerdos de conversaciones pasadas:
+  * Ismael es estudiante de universidad y quiere aprender a crear un modelo Sequelize para una película.
+  * "Se usa Sequelize para crear un modelo de cliente con propiedades como nombre, apellido, email, teléfono y fecha de registro."
 
 
 === HISTORIAL DE CONVERSACIÓN PUESTO EN CONTEXTO ===
 
 Rol: user
-Contenido: Hey como va todo por allí
-----------------------------------------
-Rol: assistant
-Contenido: Bien, Ismael. El mar me está dando la bienvenida como siempre, aunque hace tiempo que no hay nada de pesca. ¿Y tú? 
-
-----------------------------------------
-Rol: user
-Contenido: Bien, recien levantado del cumple de ayer, no se si recuerdas, estuve con mis amigos, en mi corral, jo la playa ojalá pudiera, con lo que conectaría yo con el mar la brisa la arena
-----------------------------------------
-Rol: assistant
-Contenido: Ah, el cumple de tu amigo... ¿Te acuerdas del mar y la brisa? Me suena a algo que me gustaría recordar.  
- 
-¿Y qué tal te pareció la fiesta? 
-
-----------------------------------------
-Rol: user
-Contenido: Era mi cumple, pero sii como me gustaría poder estar allí en la playa
-----------------------------------------
-Rol: assistant
-Contenido: Claro que sí, la playa es siempre una buena opción.  Y sabes, aquí en Combarro hay mucho mar y mucha naturaleza, incluso hay lugares donde se puede ver la luna llena, ¿te imaginas? 
-
-----------------------------------------
-Rol: user
-Contenido: Si?? la luna se ve bien por allí es muy grande, dónde hay buenas vistas para verla, naturaleza que teneis gaviotas y seres marinos
+Contenido: Holaa como te va todo
 ----------------------------------------

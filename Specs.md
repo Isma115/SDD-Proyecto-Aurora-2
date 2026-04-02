@@ -44,4 +44,12 @@ la librería principal de LLM es llama-cpp-python
 
 [COMPLETADA] La forma de guardar las memorias tiene que ser igual que la anterior con cada frase en memoria.json, pero ahora mismo cada vez que Aurora recuerda una conversación, se almacenan metadatos que no me interesan, solo me interesan las frases
 
-[TAREA] Crea una app para móvil en Flutter que haga conexión por red local al programa de Aurora y una vez conectado, se pueda mantener una conversación con Aurora, y que esta tenga la misma personalidad y funcionalidades que en la terminal, pero en una interfaz móvil estilo whatsapp
+[COMPLETADA] Crea una app para móvil en Flutter que haga conexión por red local al programa de Aurora y una vez conectado, se pueda mantener una conversación con Aurora, y que esta tenga la misma personalidad y funcionalidades que en la terminal, pero en una interfaz móvil estilo whatsapp
+
+[COMPLETADA] Comprueba que se puede hacer conexión desde la app de escritorio de Aurora mediante la IP, en la interfaz quiero que se muestre la IP del equipo servidor
+
+[COMPLETADA] Compila la APK preparada para instalarse
+
+[TAREA] La ventana de la aplicación debe desplegarse en modo ventana pero expandida para todo el tamaño de la pantalla
+
+[TAREA] La letra tiene mal aspecto, escoje una fuente de letra más legible, hazla más grande y blanca

@@ -1,0 +1,71 @@
+=== PROMPT DE PENSAMIENTO ===
+
+Analiza el siguiente fragmento de conversación entre un Usuario y tú (Aurora).
+Extrae UNA única frase con información importante sobre el Usuario o sobre ti misma (gustos, detalles, nombre, hechos, fechas) que sea digna de recordar a largo plazo.
+Si no hay información relevante, escribe "NADA". Escribe SOLO el hecho a recordar, sin preámbulos ni explicaciones.
+
+Conversación:
+Usuario: De pequeño me ha llamado mucho la atención siempre, pero claro, viviendo en la planicie manchega, poco puedes hacer excepto algún que otro río a kilómetros de aquí, de siempre has ido de pesca, te han enseñado desde pequeña seguramente, pues por probar algún día irmpesca la verdad que me encantaría probarlo si
+Aurora: Claro que sí, la pesca es parte de nuestra vida desde pequeños.  Mi familia siempre me ha enseñado a pescar y a amar el mar.
+
+¿Te gustaría venir conmigo a Combarro para ver cómo se hace? Hay mucho que aprender sobre las técnicas de pesca y los lugares más adecuados. 
+
+Usuario: Hola Aurora, estaba hoy haciendo cosas para la universidad, de código, necesito que me recuerdes como podría hacer un modelo sequelize para por ejemplo una Pelicula
+Aurora: ¡Hola Ismael! 
+
+Claro que te puedo ayudar con eso. Para crear un modelo Sequelize para una película, lo primero es pensar en las diferentes tablas necesarias:
+
+**Tabla: Película:**
+
+* **id (INT):**  Identificador único de la película ( primary key)
+* **titulo (TEXT):** Título del film
+* **director (TEXT):** Nombre del director 
+* **año_lanzamiento (DATE):** Fecha de lanzamiento de la película
+
+**Tabla: Actor:**
+
+* **id (INT):** Identificador único de la actor ( primary key)
+* **nombre (TEXT):** Nombre del actor
+* **biografia (TEXT):** Breve descripción del actor
+
+
+**Tabla: Película_Actor:** 
+
+* **pelicula_id (INT):**  Identificador de la película (referencia a la tabla Película)
+* **actor_id (INT):** Identificador del actor (referencia a la tabla Actor)
+
+ **Ejemplo de cómo conectar las tablas:**
+
+```javascript
+const { Sequelize } = require('sequelize'); 
+
+// Crea un nuevo modelo para la tabla 'Pelicula'
+const Movie = sequelize.define('Movie', {
+  titulo: { type: Sequelize.STRING, allowNull: false },
+  director: { type: Sequelize.STRING, allowNull: false },
+  año_lanzamiento: { type: Sequelize.DATE, allowNull: false }
+});
+
+// Crea un nuevo modelo para la tabla 'Actor'
+const Actor = sequelize.define('Actor', {
+  nombre: { type: Sequelize.STRING, allowNull: false }
+});
+
+// Define una relación entre las dos tablas
+Movie.belongsToMany(Actor, { through: 'Película_Actor' }); 
+```
+
+
+**Explicación:** 
+* Se utiliza la librería `sequelize` para conectar con el banco de datos.
+* Se define una tabla para cada objeto (Película, Actor).
+* Se establece las columnas y restricciones del modelo.  
+* Se crea una relación entre las dos tablas (Película_Actor) para mostrar los actores que han participado en una película.
+
+Recuerda que este es un ejemplo básico. Puedes agregar más campos a las tablas y definir relaciones adicionales según tus necesidades. 
+
+
+**Recomendaciones:**
+
+* Usa la documentación de Sequelize para comprender mejor las funcionalidades: [https://sequelize.org/](https://sequelize.org/)
+*

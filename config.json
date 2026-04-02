@@ -19,5 +19,9 @@
         "top_p": 0.9,
         "max_tokens": 150,
         "repeat_penalty": 1.15
+    },
+    "kv_cache": {
+        "type_k": null,
+        "type_v": null
     }
 }

@@ -4,12 +4,19 @@ import datetime
 from typing import List, Dict, Optional, Any
 
 class GestorRecursos:
-    def __init__(self):
+    def __init__(self, status_callback=None):
+        self.status_callback = status_callback
         self.historial_conversacion: List[Dict[str, str]] = []
         self.archivo_memoria: str = "Recursos/memoria.json"
         self.conocimiento: Optional[List[Dict[str, Any]]] = None
         self.carpeta_textos_conocimiento: str = "Recursos/conocimiento"
-        self.textos_conocimiento: List[Dict[str, str]] = self._cargar_textos_conocimiento()
+        self.textos_conocimiento: List[Dict[str, Any]] = self._cargar_textos_conocimiento()
+
+    def _emit_status(self, message):
+        if self.status_callback:
+            self.status_callback(message)
+        else:
+            print(message)
 
     # ─────────────────────────────────────────────────────────────────────────
     # MEMORIA A LARGO PLAZO (recuerdos enriquecidos)
@@ -65,7 +72,7 @@ class GestorRecursos:
             with open(self.archivo_memoria, "w", encoding="utf-8") as f:
                 json.dump(strings, f, ensure_ascii=False, indent=4)
         except Exception as e:
-            print(f"[Error guardando memoria]: {e}")
+            self._emit_status(f"[Error guardando memoria]: {e}")
 
     def _asegurar_memoria_cargada(self):
         if self.conocimiento is None:
@@ -263,7 +270,7 @@ class GestorRecursos:
             # Fallback: últimos N recuerdos
             return [r["texto"] for r in self.conocimiento[-limite:]]
 
-    def buscar_conocimiento(self, consulta, historial=None, limite=2):
+    def buscar_conocimiento(self, consulta, historial=None, limite=4):
         """
         Busca fragmentos relevantes de conocimiento en bruto.
         Usa scoring mejorado con bonus por historial de conversación.
@@ -289,7 +296,135 @@ class GestorRecursos:
                 puntuados.append((score, fragmento))
 
         puntuados.sort(key=lambda x: x[0], reverse=True)
-        return [f"{res[1]['origen']}: {res[1]['texto']}" for res in puntuados[:limite]]
+
+        seleccionados_base = [res[1] for res in puntuados[:limite]]
+        if seleccionados_base and len(seleccionados_base) < limite:
+            seleccionados_base = self._expandir_fragmentos_vecinos(seleccionados_base, max_total=limite)
+
+        seleccionados = []
+        for fragmento in seleccionados_base:
+            frag = dict(fragmento)
+            contexto = self._obtener_contexto_expandido_fragmento(
+                origen=frag.get("origen", ""),
+                linea_inicio=frag.get("linea_inicio", 0),
+                linea_fin=frag.get("linea_fin", 0),
+                margen_lineas=8,
+                max_chars=2200,
+            )
+            if contexto:
+                frag["texto_contexto"] = contexto["texto"]
+                frag["linea_inicio_contexto"] = contexto["linea_inicio"]
+                frag["linea_fin_contexto"] = contexto["linea_fin"]
+            else:
+                frag["texto_contexto"] = frag.get("texto", "")
+                frag["linea_inicio_contexto"] = frag.get("linea_inicio", 0)
+                frag["linea_fin_contexto"] = frag.get("linea_fin", 0)
+            seleccionados.append(frag)
+
+        return seleccionados
+
+    def _expandir_fragmentos_vecinos(self, fragmentos_base, max_total):
+        if not fragmentos_base or max_total <= len(fragmentos_base):
+            return fragmentos_base
+
+        por_origen = {}
+        for frag in self.textos_conocimiento:
+            origen = frag.get("origen", "")
+            por_origen.setdefault(origen, []).append(frag)
+
+        for origen in por_origen:
+            por_origen[origen].sort(key=lambda f: f.get("linea_inicio", 0))
+
+        resultado = list(fragmentos_base)
+        claves = {
+            (
+                f.get("origen", ""),
+                f.get("linea_inicio", 0),
+                f.get("linea_fin", 0),
+            )
+            for f in resultado
+        }
+
+        hubo_cambios = True
+        while len(resultado) < max_total and hubo_cambios:
+            hubo_cambios = False
+            actuales = list(resultado)
+            for base in actuales:
+                origen = base.get("origen", "")
+                candidatos = por_origen.get(origen, [])
+                if not candidatos:
+                    continue
+
+                idx_base = None
+                for idx, cand in enumerate(candidatos):
+                    if (
+                        cand.get("linea_inicio", 0) == base.get("linea_inicio", 0)
+                        and cand.get("linea_fin", 0) == base.get("linea_fin", 0)
+                    ):
+                        idx_base = idx
+                        break
+
+                if idx_base is None:
+                    continue
+
+                for desplazamiento in (-1, 1):
+                    idx_vecino = idx_base + desplazamiento
+                    if idx_vecino < 0 or idx_vecino >= len(candidatos):
+                        continue
+
+                    vecino = candidatos[idx_vecino]
+                    clave = (
+                        vecino.get("origen", ""),
+                        vecino.get("linea_inicio", 0),
+                        vecino.get("linea_fin", 0),
+                    )
+                    if clave in claves:
+                        continue
+
+                    resultado.append(vecino)
+                    claves.add(clave)
+                    hubo_cambios = True
+
+                    if len(resultado) >= max_total:
+                        return resultado
+
+        return resultado
+
+    def _obtener_contexto_expandido_fragmento(
+        self,
+        origen,
+        linea_inicio,
+        linea_fin,
+        margen_lineas=8,
+        max_chars=2200,
+    ):
+        if not origen:
+            return None
+
+        ruta = os.path.join(self.carpeta_textos_conocimiento, origen)
+        if not os.path.exists(ruta):
+            return None
+
+        try:
+            with open(ruta, "r", encoding="utf-8") as f:
+                lineas = f.read().splitlines()
+        except Exception:
+            return None
+
+        if not lineas:
+            return None
+
+        inicio = max(0, int(linea_inicio) - margen_lineas)
+        fin = min(len(lineas) - 1, int(linea_fin) + margen_lineas)
+        texto = "\n".join(lineas[inicio:fin + 1]).strip()
+        if len(texto) > max_chars:
+            texto = texto[:max_chars].rstrip() + "..."
+
+        return {
+            "texto": texto,
+            "linea_inicio": inicio,
+            "linea_fin": fin,
+        }
 
     def obtener_todos_recuerdos_texto(self):
         """Devuelve todos los recuerdos como lista de strings (para filtrado LLM)."""
@@ -312,16 +447,41 @@ class GestorRecursos:
                 filepath = os.path.join(self.carpeta_textos_conocimiento, filename)
                 try:
                     with open(filepath, "r", encoding="utf-8") as f:
-                        texto_completo = f.read()
-                    parrafos = texto_completo.split("\n\n")
-                    for parrafo in parrafos:
-                        if len(parrafo.strip()) > 30:
+                        lineas = f.read().splitlines()
+
+                    inicio = None
+                    buffer = []
+
+                    for idx, linea in enumerate(lineas):
+                        if linea.strip():
+                            if inicio is None:
+                                inicio = idx
+                            buffer.append(linea.rstrip())
+                            continue
+
+                        if inicio is not None:
+                            texto_fragmento = "\n".join(buffer).strip()
+                            if len(texto_fragmento) > 30:
+                                fragmentos.append({
+                                    "origen": filename,
+                                    "texto": texto_fragmento,
+                                    "linea_inicio": inicio,
+                                    "linea_fin": idx - 1,
+                                })
+                            inicio = None
+                            buffer = []
+
+                    if inicio is not None:
+                        texto_fragmento = "\n".join(buffer).strip()
+                        if len(texto_fragmento) > 30:
                             fragmentos.append({
                                 "origen": filename,
-                                "texto": parrafo.strip()
+                                "texto": texto_fragmento,
+                                "linea_inicio": inicio,
+                                "linea_fin": len(lineas) - 1,
                             })
                 except Exception as e:
-                    print(f"[Error cargando archivo {filename}]: {e}")
+                    self._emit_status(f"[Error cargando archivo {filename}]: {e}")
         return fragmentos
 
     # ─────────────────────────────────────────────────────────────────────────
@@ -388,9 +548,9 @@ class GestorRecursos:
             while len(archivos) > self.MAX_CONVERSACIONES_GUARDADAS:
                 os.remove(archivos.pop(0))
 
-            print(f"[Conversación guardada en {nombre}]")
+            self._emit_status(f"[Conversación guardada en {nombre}]")
         except Exception as e:
-            print(f"[Error guardando conversación]: {e}")
+            self._emit_status(f"[Error guardando conversación]: {e}")
 
     def cargar_ultima_conversacion(self):
         """
@@ -416,9 +576,8 @@ class GestorRecursos:
                 datos = json.load(f)
             mensajes = datos.get("mensajes", [])
             fecha = datos.get("fecha", "desconocida")
-            print(f"[Cargando última sesión del {fecha[:10]}... {len(mensajes)//2} turno(s)]")
+            self._emit_status(f"[Cargando última sesión del {fecha[:10]}... {len(mensajes)//2} turno(s)]")
             return mensajes
         except Exception as e:
-            print(f"[Error cargando última sesión]: {e}")
+            self._emit_status(f"[Error cargando última sesión]: {e}")
             return []
-
