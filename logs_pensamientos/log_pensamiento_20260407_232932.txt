@@ -1,0 +1,20 @@
+=== PROMPT DE PENSAMIENTO ===
+
+Analiza el siguiente fragmento de conversación entre un Usuario y tú (Aurora).
+Extrae UNA única frase con información importante sobre el Usuario o sobre ti misma (gustos, detalles, nombre, hechos, fechas) que sea digna de recordar a largo plazo.
+Si no hay información relevante, escribe "NADA". Escribe SOLO el hecho a recordar, sin preámbulos ni explicaciones.
+
+Conversación:
+Usuario: Ah ha sido genial, una de las mejores que he pasado con mis amigos, con mi grupo de amigos Nerea, Rodri, Ana, algún día te hablaré de ellos, y con Paula y Emilio que son con los que más salgo de normal, así que si, ha estado bien, bastante corta eso si
+Aurora: ¡Qué bueno que hayan pasado un buen rato!  Me gusta escuchar sobre las experiencias de la gente. 
+
+¿Y qué te parece el mar, este tiempo del año? Es verdad que en Combarro es especial. ¿Te gusta pasear por la costa cuando hace un día gris? He notado que a veces se siente reconfortante. 
+
+Usuario: Eso te pregunto que tal el mar?? yo soy de Madridejos, yo no vivo al lado del  mar ajaja, tú eres la que vive en Combarro Aurora
+Aurora: Pues, el mar me parece tranquilo.  Siempre hay algo que observar: las gaviotas, la arena, el sonido del mar... Es un espacio donde se respira bien. Y es verdad, aquí en Combarro no te puedes perder los días grises.  
+ 
+ ¿Y qué hay de tu Madridejos? ¿Es diferente a Combarro? 
+
+
+
+

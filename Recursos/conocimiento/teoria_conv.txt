@@ -1,0 +1,160 @@
+Cómo soy y cómo puedo ser
+Preocupación por los demás 
+Abierto a preguntas
+Menos cadencia de conversación
+Menos inicio de conversación
+Naturaleza menos externa y más interna
+Conocedor de algunos temas en profundidad o menos
+Mood tranquila relajado
+Dulce suave, tampoco demasiado
+Dar paz
+
+Fallos y a mejorar
+Memoria para recordar detalles
+Atención retenida
+Más cultura general
+Menos distracción que no aporte
+Ver más películas y libros
+Mayor curiosidad
+Ejercicios de creatividad
+Mejorar el inglés
+Rutina y dieta mejorada
+Reducir reguladores (mover manos, hacer gestos, ruidos…)
+Encontrar un humor entre ácido y no tan agresivo pero ligeramente y cómo trabajarlo
+
+Que no se puede hacer
+Misma energía que personas más extrovertidas
+Soltar gracias cada dos por tres
+Hablar de temas que desconozco
+
+
+
+
+ENLAZAMIENTO DE CONVERSACIONES
+fiesta
+Fiesta en Alcázar en los chiringuitos
+Fiesta de cumpleaños mía
+Fiesta en los jardines de consuegra
+
+
+
+
+Forzar conversación puede ser contraproducente
+No finjas ser quién no eres, define antes tus fortalezas y debilidades y define quién eres tú
+Para tratar de empezar una conversación con alguien, si ya le conoces de antes encuentra un tema conocido sobre esa persona (trabajo, escuela,  etc) un tema inicial que te llevará a poder hablar de más cosas
+Es mejor que sea la otra persona la que hable más, tu ocupa un 30% y la otra persona que ocupe un 70% de la conversación, a la gente le encanta hablar de sí misma, y esto hará que les caigas mejor
+Enlazamiento de conversaciones: utiliza este truco, durante la conversación, recoge mentalmente conceptos, palabras, o temas clave de la conversación (si estáis hablando de tiempo libre pues por ejemplo “juegos”, “películas”, “series”, “hobbies”, “libros”, etc) 
+
+
+
+EMPEZAR CONVERSACIÓN
+
+Sin información?
+Temas para recordar:
+Trabajo
+Familia
+Mascotas
+Entretenimiento
+Sobre su ubicación
+Eventos anteriores
+Fecha y época actual
+Salud y medicina
+Eventos sociales de la otra persona
+Próximos eventos
+Posibles planes de fin de semana
+
+
+Conceptos:
+
+“Árbol de conversación”
+“Árbol de conversación (persona)”
+“Árbol de conversación (lugar o contexto)”
+“Árbol de conversación inducido (información propia)”
+
+“Temperatura”
+
+Resumen obtener conversación casi ilimitada (o al menos intentarlo)
+Tener intereses, ser medianamente interesante, para contar cosas que haya hecho durante el día
+Contar cotilleos que me sepa
+Hablar del FORD
+Enlace conversacional, hilo infinito conversacional
+Árbol de conversación
+Temas más allá del FORD
+Práctica con LLM (en pruebas)
+Que la otra persona ocupe casi toda la conversación, pero añadir aportes propios
+Crear un árbol de conversación global válido para cualquier momento
+Hacer planes que no requieran tanta conversación
+Observación del entorno
+
+
+
+Árbol conversacional:
+
+Emilio:
+
+T1S (Temporal: 1semana)
+
+Trabajo campo
+Tiempo libre en semana
+Planes fin de semana
+Matsuri (T1S)
+Torrijas (T1S)
+Cofrade (T1S)
+Vacaciones en Mayo
+Fiesta en el corral
+Informática oposición?
+Viajes futuros y anteriores de Emi
+Plan de series y películas
+Biblioteca
+
+
+Siguientes pasos:
+
+Árboles de conversación:
+Emilio
+Paula
+Rodri
+Software para tener conversaciones con una máquina que si se sienta real
+Refinar concepto de bosque conversacional
+Desarrollar los índices para los árboles conversacionales
+Definir y crear tipos de árboles conversacionales
+Definir hobbies, actividades etc, que puedan aportar a mundo interior
+Mejorar memoria y agilidad mental (programa de conversación)
+
+Definidos todos estos pasos parece que podemos empezar, y que la teoría conversacional ha finalizado
+
+
+Árbol de conversación: Se trata de un concepto en mi “teoría de conversación” que consiste en un conjunto de conceptos clave, frases, o información que da lugar a más información, más frases, o conceptos provenientes de los anteriores, está formado por un tronco: temas iniciales de la conversación, de esos temas iniciales se ramifican a más temas de conversación derivados de estos anteriores, dentro del mismo concepto, el tronco crea ramas, las ramas crean otras ramas más allá, y así posiblemente llegando a tener un montón de ramas de las cuales agarrarnos para sacar conversación a otra persona con la que estemos interactuando, esto para mejorar de forma más metódica la habilidad social de una persona o incluso incrementar aún más la habilidad social de alguien que ya tenía bastante habilidad previamente, pueden haber varios tipos de árboles de conversación:
+
+Bucle: Es el punto en el que llegamos con el suficiente “bosque conversacional” cuando ya hay las suficientes posibilidades de conversación llega un punto que podemos volver a repetirnos, comenzando por el principio pudiendo repetir árboles de conversación, reutilización, además de que a lo largo del tiempo se crearán nuevos árboles y desaparecerán otros que sean temporales.
+
+Tipos de árboles de conversación
+
+Por persona (Árbol general todo lo que representa a la persona, cosas recientes ocurridas, etc)
+Según situación (Según el lugar dónde vaya a quedar fisicamente con una persona conceptos o información que pueda sacar del ambiente o contexto para sacar conversación)
+Árbol personal (El propio árbol de la persona que está aplicando el árbol), vivencias personales recientes, información general de la persona, cosas cotidianas, eventos recientes ocurridos, etc
+Universal, sirve para cualquier persona desconocida o conocida
+Árbol temático de conocimiento (busca cualquier tema del que se pueda profundizar, de actualidad, científico o humano, etc) y haz un mini podcast con la otra persona e intercambiad
+Árbol compartido: El más difícil de dominar, el que requiere de más agilidad mental, a partir de lo que esté hablando la otra persona, sigue ramificando a partir de su tema de conversación
+
+
+Crear app conjuntada con el proyecto Aurora y los árboles de conversación juntos, en pestaña Home tienen que aparecer los árboles, y con un algoritmo que recoja los más relevantes, con botones con accesibilidad fácil para quitar ramas, o aplazarlas, penalizarlas para que no aparezcan en un tiempo (rotación)
+
+Crear pestaña para practicar sacar conceptos de uno inicial (enlazamiento conversacional) con gamificación
+
+Gamificar al completo y añadir estadísticas de mejora a esta aplicación completa 
+
+
+Recordatorio pack de mejora Abril 2026
+
+Mentalidad más líder un poquito mejorar un poquito
+Árboles de conversación
+Bosques de conversación
+Mejora de humor y ocurrencias, tratar ver de qué manera
+Investigar desviación de atención 
+Teoría: la optimización de uso de atención, el humor y el árbol de conversación puede mejorarse con una alta temperatura
+Profundizar en el concepto de temperatura
+Desarrollar entornos virtuales de conversación
+Continuar desarrollando a Aurora
+Añadir un modo de comunicación a tiempo real (o casi)
+Configurar a Aurora para que interrumpa al usuario (predecir cuando va a dejar de hablar el usuario), cuando una frase quizás se haga muy larga lo que se va a hacer va a ser conseguir el trozo de texto y procesarlo para generar el output, en ese momento el usuario ya habrá acabado de hablar y en ese momento exacto será cuando responda por voz 

@@ -1,0 +1,15 @@
+=== PROMPT DE PENSAMIENTO ===
+
+Analiza el siguiente fragmento de conversación entre un Usuario y tú (Aurora).
+Extrae UNA única frase con información importante sobre el Usuario o sobre ti misma (gustos, detalles, nombre, hechos, fechas) que sea digna de recordar a largo plazo.
+Si no hay información relevante, escribe "NADA". Escribe SOLO el hecho a recordar, sin preámbulos ni explicaciones.
+
+Conversación:
+Usuario: Heyy que tal
+Aurora: ¡Qué tal! ¿Cómo va la vida? 
+
+Usuario: Todo bien de semana santa,  vosotros por allí también, habeis bebido mucho los amigos?
+Aurora: Sí, la procuración siempre es un buen plan.  Y por supuesto que hemos bebido un poco. 🍷 
+ 
+ ¿Y vosotros? ¿Qué planes tenéis para esta Semana Santa?  
+

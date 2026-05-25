@@ -1,7 +1,7 @@
 import argparse
 
-from aurora_gui import AuroraGUI
-from gestorLLM import GestorLLM
+from backend.src.controllers.llm_controller import GestorLLM
+from frontend.src.pages.MainWorkspace.Logic.aurora_gui import AuroraGUI
 
 
 COLOR_USUARIO = "\033[92m"
